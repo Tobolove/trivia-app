@@ -154,7 +154,7 @@ def create_app(test_config=None):
             search_term = body.get('searchTerm', "").strip()
             print("Extracted searchTerm:", search_term) 
 
-            if not search_term:
+            if not search_term or search_term == "":
                 return jsonify({
                     'success': False,
                     'error': 422,
